@@ -1,9 +1,9 @@
 "use client";
+
 import { useState } from "react";
 
 
-
-export default function NewItem() {
+export default function NewItem({ onAddItem }) {
 
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
@@ -19,7 +19,8 @@ export default function NewItem() {
         };
         console.log(newItem);
 
-        alert("Your new item is: " + newItem.name + ", amount: " + newItem.quantity + " in " + newItem.category)
+        //alert("Your new item is: " + newItem.name + ", amount: " + newItem.quantity + " in " + newItem.category)
+        onAddItem(newItem);
 
         setName("");
         setQuantity(1);
@@ -39,10 +40,10 @@ export default function NewItem() {
     };
 
     return(
-        <div className="min-h-screen bg-sky-300 flex items-center justify-center">
+        <div>
         <form 
             onSubmit={handleSubmit}
-            className="w-full max-w-md bg-white p-10 rounded-lg shadow-md">            
+            className="w-full max-w-md ml-10 bg-violet-300 p-10 rounded-md">            
             
                 <span className="text-gray-700">
                 <input 
@@ -73,7 +74,7 @@ export default function NewItem() {
             <select className="mt-1 ml-5 p-1 block w-64 rounded-md text-black bg-gray-100 focus:bg-white"
                 value={category}
                 onChange={handleCategoryChange}
-                >
+            >
                 <option value="product">Product</option>   
                 <option value="dairy">Dairy</option>   
                 <option value="bakery">Bakery</option>   
@@ -84,16 +85,22 @@ export default function NewItem() {
                 <option value="beverages">Beverages</option>   
                 <option value="snacks">Snacks</option>   
                 <option value="household">Household</option>   
-                <option value="other">Other</option>               
+                <option value="other">Other</option>        
+                
             
             </select>
             </div><br/>    
 
             <button 
                 type="submit"
-                className="mt-1 p-1 block rounded-md text-black bg-indigo-300 focus:bg-grey"
-            >Add</button>
+                className="mt-1 p-1 block rounded-md
+                text-white bg-violet-500 
+                focus:ring-2 focus:ring-grey-600"
+            >Add</button>               
+                    
 
+
+            
         </form>
         </div>
     )
