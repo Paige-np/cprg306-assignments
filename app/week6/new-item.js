@@ -40,10 +40,10 @@ export default function NewItem({ onAddItem }) {
     };
 
     return(
-        <div>
+        <div className="ml-10">
         <form 
             onSubmit={handleSubmit}
-            className="w-full max-w-md ml-10 bg-violet-300 p-10 rounded-md">            
+            className="w-full max-w-md bg-[#6B654B] p-10 rounded-lg shadow-md">            
             
                 <span className="text-gray-700">
                 <input 
@@ -89,18 +89,14 @@ export default function NewItem({ onAddItem }) {
                 
             
             </select>
-            </div><br/>    
+                
 
             <button 
                 type="submit"
-                className="mt-1 p-1 block rounded-md
-                text-white bg-violet-500 
-                focus:ring-2 focus:ring-grey-600"
-            >Add</button>               
-                    
+                className="mt-1 ml-5 p-1 pl-3 pr-3 rounded-md text-white hover:scale-110 bg-[#BC5D2E] focus:ring-2 focus:ring-[#E3B23C] focus:bg-[#E3B23C]"
+            >Add</button> 
 
-
-            
+            </div><br/>        
         </form>
         </div>
     )

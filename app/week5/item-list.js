@@ -9,8 +9,7 @@ export default function ItemList(){
 
   let itemArray = items.map((item) => ({ ...item }));
   
-  itemArray = itemArray.sort((a, b) => {
-      console.log("here?");
+  itemArray = itemArray.sort((a, b) => {      
       if (sortBy === "name"){        
         if (a.name < b.name){
           return -1;
@@ -38,21 +37,21 @@ return (
   <div className="min-h-screen">
     
     <div>
-      <label>Sort by: </label>
+      <label className="text-xl font-bold m-2 text-[#222422] pt-5 pl-5">Sort by: </label>
       <button
       onClick={(e) => setSortBy(e.target.value)}
       value="name"
-      className="bg-indigo-500 p-1 m-2 w-28 focus:ring-2 focus:ring-grey-600"
+      className="p-2 m-2 w-28 rounded-md text-white bg-[#BC5D2E] focus:ring-2 focus:ring-[#E3B23C] focus:bg-[#E3B23C]"
       >Name  </button>
 
       <button
       onClick={(e) => setSortBy(e.target.value)}
       value="category"
-      className="bg-indigo-500 p-1 m-2 w-28 focus:ring-2 focus:ring-grey-600"
+      className="p-2 m-2 w-28 rounded-md text-white bg-[#BC5D2E] focus:ring-2 focus:ring-[#E3B23C] focus:bg-[#E3B23C]"
       > Category </button>
     </div>
 
-    <section className="gap-5 p-5">
+    <section className="gap-5 pl-5">
       {itemArray.map((item) => (
         <Item key={item.id} item={item} />
       ))}

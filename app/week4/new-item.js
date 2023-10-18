@@ -39,10 +39,10 @@ export default function NewItem() {
     };
 
     return(
-        <div className="min-h-screen bg-sky-300 flex items-center justify-center">
+        <div className="min-h-screen bg-[#E4D6A7] flex items-center justify-center">
         <form 
             onSubmit={handleSubmit}
-            className="w-full max-w-md bg-white p-10 rounded-lg shadow-md">            
+            className="w-full max-w-md bg-[#6B654B] p-10 rounded-lg shadow-md">            
             
                 <span className="text-gray-700">
                 <input 
@@ -86,13 +86,13 @@ export default function NewItem() {
                 <option value="household">Household</option>   
                 <option value="other">Other</option>               
             
-            </select>
-            </div><br/>    
+            </select>            
 
             <button 
                 type="submit"
-                className="mt-1 p-1 block rounded-md text-black bg-indigo-300 focus:bg-grey"
+                className="mt-1 ml-5 p-1 pl-3 pr-3 rounded-md text-white hover:scale-110 bg-[#BC5D2E] focus:ring-2 focus:ring-[#E3B23C] focus:bg-[#E3B23C]"
             >Add</button>
+            </div><br/> 
 
         </form>
         </div>
