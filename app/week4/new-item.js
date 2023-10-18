@@ -91,7 +91,8 @@ export default function NewItem() {
 
             <button 
                 type="submit"
-                className="mt-1 p-1 block rounded-md text-black bg-indigo-300 focus:bg-grey">Add</button>               
+                className="mt-1 p-1 block rounded-md text-black bg-indigo-300 focus:bg-grey"
+            >Add</button>               
                     
 
 
