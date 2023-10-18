@@ -42,7 +42,7 @@ return (
       <button
       onClick={(e) => setSortBy(e.target.value)}
       value="name"
-      className="bg-indigo-500 p-1 m-2 w-28"
+      className="bg-indigo-500 p-1 m-2 w-28 focus:ring-2 focus:ring-grey-600"
       >Name  </button>
 
       <button
