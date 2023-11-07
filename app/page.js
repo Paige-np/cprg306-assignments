@@ -13,9 +13,10 @@ export default function Home() {
       <div className = "hover:text-[#DD614A] hover:text-2xl w-20"><Link href="/week4">week 4</Link></div>
       <div className = "hover:text-[#DD614A] hover:text-2xl w-20"><Link href="/week5">week 5</Link></div>
       <div className = "hover:text-[#DD614A] hover:text-2xl w-20"><Link href="/week6">week 6</Link></div>
+      <div className = "hover:text-[#DD614A] hover:text-2xl w-20"><Link href="/week7">week 7</Link></div> 
+      <div className = "hover:text-[#DD614A] hover:text-2xl w-20"><Link href="/week8">week 8</Link></div>
   
-    </main>
-    
+    </main>    
     
   )
 }
