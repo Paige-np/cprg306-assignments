@@ -30,7 +30,8 @@ export default function MealIdeas({ ingredient }) {
   }
 
   useEffect(() => {
-    loadMealIdeas(ingredient);
+    if(ingredient) {
+    loadMealIdeas(ingredient);}
   }, [ingredient]);
 
   return (
@@ -38,20 +39,31 @@ export default function MealIdeas({ ingredient }) {
         <label className="text-xl font-bold text-[#222422]">Meal Ideas</label>
         <ul>
             { meals !== null && meals !== undefined ?
-            meals.map((meal) => (
+            meals.length === 0 ? (<p>Please select an ingredient for recipe.</p>) :(
+            <>
+            <p>Here are some recipes for {ingredient}:</p>
+            <ul className="mt-5 space-y-2">
+            {meals.map((meal) => (
                 <li key={meal.idMeal}>
-                    <a href={meal.strSource}>{meal.strMeal}</a>
-                    <div>{meal.strMeal}</div>
-                </li>
-            )) : <p>There is no recipe for {ingredient}</p>}
+                    {/* <a href={meal.strSource}>{meal.strMeal}</a> */}
+                    <div 
+                    className="rounded p-2 bg-[#9C9268] hover:bg-[#E3B23C] cursor-pointer"
+                        //onClick={() => handleMealSelect(meal)}
+                    >{meal.strMeal}</div>
+                </li>            
+            ))}
+            </ul>
+            </>
+            ) : <p>There is no recipe for {ingredient}</p>}
         </ul>
     </div>
-    // <div className="max-w-sm ">
+
+    // <div className="max-w-sm">
     //   <h2 className="text-3xl font-bold text-black">Meal Ideas</h2>
-    //   {meals == null ? (
-    //     <p className="pt-2 font-bold text-black">
-    //       No recipe for {ingredient}
-    //     </p>
+    //   {meals === null ? (
+    //     <p className="pt-2 font-bold text-black">No recipe for {ingredient}</p>
+    //   ) : meals.length === 0 ? (
+    //     <p className="pt-2 font-bold text-black">Please select ingredient</p>
     //   ) : (
     //     <>
     //       <p className="pt-2 pb-2 font-bold text-black">
@@ -60,7 +72,10 @@ export default function MealIdeas({ ingredient }) {
     //       <ul className="mt-2 space-y-2">
     //         {meals.map((meal) => (
     //           <li key={meal.idMeal}>
-    //             <div className="rounded p-2 bg-blue-900 hover:bg-pink-900 cursor-pointer ">
+    //             <div
+    //               className="rounded p-2 bg-blue-900 hover:bg-pink-900 cursor-pointer"
+    //               onClick={() => handleMealSelect(meal)}
+    //             >
     //               {meal.strMeal}
     //             </div>
     //           </li>
@@ -69,5 +84,26 @@ export default function MealIdeas({ ingredient }) {
     //     </>
     //   )}
     // </div>
+
+//     <div>
+//     <label className="text-xl font-bold text-[#222422]">Meal Ideas</label>
+//     <ul>
+//       {meals !== null && meals !== undefined ? (
+//         meals.length > 0 ? (
+//           meals.map((meal) => (
+//             <li key={meal.idMeal}>
+//               <a href={meal.strSource}>{meal.strMeal}</a>
+//               <div>{meal.strMeal}</div>
+//             </li>
+//           ))
+//         ) : (
+//           <p>Please select an ingredient</p>
+//         )
+//       ) : (
+//         <p>There is no recipe for {ingredient}</p>
+//       )}
+//     </ul>
+//   </div>
   );
 }
+

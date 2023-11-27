@@ -8,6 +8,8 @@ export default function Page()
 {
     const {user, gitHubSignIn, firebaseSignOut} = useUserAuth();
 
+    
+
     async function handleSignIn(){
         try {
             await gitHubSignIn();
@@ -35,6 +37,7 @@ export default function Page()
                 { user ? (
                     <div className="ml-10">
                         <p className="text-black mt-2">Welcome, {user.displayName}</p>
+                        <p>Your user ID is: {user.uid}</p>
                         <img src={user.photoURL} className="w-20 h-20 mt-5 rounded-xl"/>
                         <button
                             //className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hover:underline" 
